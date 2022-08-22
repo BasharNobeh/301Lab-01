@@ -3,8 +3,8 @@ import React from 'react';
 
 class Footer extends React.Component{
   render(){
-    return (<div> 
-            Author : Bashar Nobeh (Footer Component)
+    return (<div style={{fontSize:"30px" , textAlign:"center" }}> 
+            Author : Bashar Nobeh 😄
    
     </div>
     )
