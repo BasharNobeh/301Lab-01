@@ -1,5 +1,5 @@
 import React from 'react';
-import Animal from '/home/adduser/301/react-app/src/Components/HornedBeast.js';
+import Animal from './HornedBeast';
 
 class Main extends React.Component{
   render(){
