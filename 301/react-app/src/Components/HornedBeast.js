@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormText } from 'react-bootstrap';
+
 
 import Card from 'react-bootstrap/Card';
     
@@ -9,7 +9,8 @@ class HornedBeast extends React.Component{
 constructor(props){
   super(props);
   this.state ={
-numofhearts : ""
+numofhearts : "",
+counter :0
 
   }
 
@@ -17,6 +18,7 @@ numofhearts : ""
 }
 increaseNumberOfHearts = () =>{
   this.setState({
+counter: this.state.counter +1,
     numofhearts: this.state.numofhearts+"❤️"
   })
 }
@@ -33,7 +35,7 @@ render(){
       <Card.Title  style ={{color:"rgba(140,45,226,255)"}}>{this.props.name}</Card.Title>
       <Card.Text style ={{color:"rgba(140,45,226,255)"}}>{this.props.dis} </Card.Text>
       <Card.Text style ={{color:"red" ,fontSize:"20px" , fontWeight: "bold",FormText: "Times New Roman, Times, serif"}}>
-       Favorties:<br></br> {this.state.numofhearts}
+       Favorties: {this.state.counter}<br></br> {this.state.numofhearts}
       </Card.Text>
       
      
