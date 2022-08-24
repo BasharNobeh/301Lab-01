@@ -1,13 +1,21 @@
 import React from "react";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import Main from "./Components/Main";
-import Animal from "./Components/HornedBeast";
-import ModelBeast from "./Components/SelectedBeast"
+
+import Selector from "./Components/Selector"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import myData from "./Components/Data";
+
+
+let array1Horn = myData.filter (element => element.horns ==1);
+let array2Horns = myData.filter (element => element.horns ==2);
+let array3Horns = myData.filter (element => element.horns ==3);
+
+
+
+
 
 class App extends React.Component {
   constructor(props) {
@@ -17,8 +25,29 @@ class App extends React.Component {
       dis: "",
       imgURL: "",
       name: "",
+      num:"",
       
     };
+  }
+
+
+  onClickOne(){
+this.setState({
+  num:"1",
+})
+console.log(this.state);
+  }
+  onClickTwo(){
+    this.setState({
+      num:"2",
+    })
+    console.log(this.state);
+  }
+  onClickThree(){
+    this.setState({
+      num:"3",
+    })
+    console.log(this.state);
   }
   ChangedisplayedBeast(title2, dis2, imgURL2, name2) {
     this.setState({
@@ -26,6 +55,10 @@ class App extends React.Component {
       dis: dis2,
       imgURL: imgURL2,
       name: name2,
+      DeployAll : true,
+      Deploy3:false,
+      Deploy1:false,
+      Deploy2:false,
     });
   }
 
@@ -38,7 +71,7 @@ class App extends React.Component {
         }}
       >
         <Header />
-        <Main JsonData={myData} />
+        <Selector Data1 = {array1Horn} Data2 = {array2Horns} Data3 = {array3Horns} Data4 = {myData}/>
         
         
         <Footer />
